@@ -1,9 +1,9 @@
 package ba.unsa.etf.rs.tutorijal8;
 
 public class Bus {
-    private int id;
-    private String proizvodjac;
-    private String serija;
+    private Integer id = null;
+    private String maker;
+    private String series;
     private int numberOfSeats;
     private int numberOfDrivers;
     private Driver FirstDriver = null;
@@ -19,25 +19,24 @@ public class Bus {
 
     public Bus(){ }
 
-    public Bus(String proizvodjac, String serija, int numberOfSeats) {
-        this.proizvodjac = proizvodjac;
-        this.serija = serija;
+    public Bus(String maker, String series, int numberOfSeats) {
+        this.maker = maker;
+        this.series = series;
         this.numberOfSeats = numberOfSeats;
     }
 
-    public Bus( int Id, String proizvodjac, String serija, int numberOfSeats) {
+    public Bus(int Id, String maker, String series, int numberOfSeats) {
         id = Id;
-        this.proizvodjac = proizvodjac;
-        this.serija = serija;
+        this.maker = maker;
+        this.series = series;
         this.numberOfSeats = numberOfSeats;
 
     }
-    public Bus(int Id, String proizvodjac, String serija, int numberOfSeats, Driver firstDriver, Driver secondDriver) {
+    public Bus(int Id, String maker, String series, int numberOfSeats, Driver firstDriver, Driver secondDriver) {
         id = Id;
-        this.proizvodjac = proizvodjac;
-        this.serija = serija;
+        this.maker = maker;
+        this.series = series;
         this.numberOfSeats = numberOfSeats;
-
         FirstDriver = firstDriver;
         SecondDriver = secondDriver;
     }
@@ -51,19 +50,19 @@ public class Bus {
     }
 
     public String getMaker() {
-        return proizvodjac;
+        return maker;
     }
 
-    public void setProizvodjac(String proizvodjac) {
-        this.proizvodjac = proizvodjac;
+    public void setMaker(String maker) {
+        this.maker = maker;
     }
 
-    public String getSerija() {
-        return serija;
+    public String getSeries() {
+        return series;
     }
 
-    public void setSerija(String serija) {
-        this.serija = serija;
+    public void setSeries(String series) {
+        this.series = series;
     }
 
     public int getSeatNumber() {
@@ -91,15 +90,15 @@ public class Bus {
     }
 
     @Override
-    public String toString() {
-        String ispisBusa = "";
-        ispisBusa += this.proizvodjac + " " + this.serija + " ( seats: " + this.getSeatNumber() + " )";
+    public String toString () {
+        String s = "";
+        s += this.maker + " " + this.series + " ( seats: " + this.getSeatNumber() + " )";
         if (FirstDriver != null) {
-            ispisBusa += FirstDriver.toString();
+            s += FirstDriver.toString();
         }
         if (SecondDriver != null) {
-            ispisBusa += SecondDriver.toString();
+            s += SecondDriver.toString();
         }
-        return ispisBusa;
+        return s;
     }
 }
