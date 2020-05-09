@@ -165,6 +165,60 @@ public class TransportDAO {
         return java.sql.Date.valueOf(dateToConvert);
     }
 
+    public void addDriver(Driver driver){
+        try {
+            ResultSet rs = idDriver.executeQuery();
+            int id = 1;
+            if (rs.next()) {
+                id = rs.getInt(1);
+            }
+            addDriver.setInt(1, id);
+            addDriver.setString(2, driver.getName());
+            addDriver.setString(3, driver.getPrezime());
+            addDriver.setString(4 , driver.getJMBG());
+            addDriver.setDate(5 , convertToDateViaSqlDate(driver.getBirthday()));
+            addDriver.setDate(6 , convertToDateViaSqlDate(driver.getEmploymentDate()));
+            addDriver.executeUpdate();
+        } catch (SQLException e) {
+            throw new IllegalArgumentException("Taj vozač već postoji!");
+        }
+    }
+    public void addBus(Bus bus) {
+        try {
+            ResultSet rs = idBus.executeQuery();
+            int id = 1;
+            if (rs.next()) {
+                id = rs.getInt(1);
+            }
+            addBusST.setInt(1, id);
+            addBusST.setString(2, bus.getMaker());
+            addBusST.setString(3, bus.getSeries());
+            addBusST.setInt(4, bus.getSeatNumber());
+            addBusST.setInt(5,bus.getNumberOfDrivers());
+            addBusST.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteBus(Bus bus) {
+        try {
+            deleteBusST.setInt(1, bus.getId());
+            deleteBusST.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteDriver(Driver driver) {
+        try {
+            deleteDriverST.setInt(1, driver.getId());
+            deleteDriverST.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void resetDatabase() {
         try {
             deleteDriverBus.executeUpdate();
@@ -177,6 +231,21 @@ public class TransportDAO {
 
 
     public void dodijeliVozacuAutobus(Driver driver, Bus bus, int which) {
+        try {
+         //   Driver driver = getDrivers().get(bus.getId());
+           // Bus bus = getBusses().get(driver.getId());
+            getDriverBus.setInt(1, bus.getId());
+            getDriverBus.setInt(2, driver.getId());
+            getDriverBus.executeUpdate();
+            if(which == 1){
+                bus.setFirstDriver(driver);
+            }
+            if (which == 2){
+                bus.setSecondDriver(driver);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 }
