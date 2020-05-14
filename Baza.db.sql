@@ -1,25 +1,19 @@
-CREATE TABLE DriverBus (
-	driverId	INTEGER,
-	busId	INTEGER,
-	driverbus_id	INTEGER,
-	PRIMARY KEY(driverbus_id),
-	FOREIGN KEY(busId) REFERENCES Bus(bus_id),
-	FOREIGN KEY(driverId) REFERENCES Vozac(vozac_id)
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "Driver" (
+	"name"	TEXT,
+	"surname"	TEXT,
+	"jmb"	TEXT PRIMARY KEY ,
+	"Brithday"	date,
+	"EmployedDate"	date
 );
-CREATE TABLE Driver (
-	driver_id	INTEGER,
-	name	TEXT,
-	surname	TEXT,
-	JMBG	TEXT UNIQUE ,
-	birthday_date	DATE,
-	employment_date	DATE,
-	PRIMARY KEY(driver_id)
+CREATE TABLE IF NOT EXISTS "bus" (
+	"BusID"	INTEGER PRIMARY KEY AUTOINCREMENT,
+	"Maker"	TEXT,
+	"Series"	TEXT,
+	"SeatNumber"	INTEGER,
+	"DriverOne"	TEXT,
+	"DriverTwo"	TEXT
 );
-CREATE TABLE Bus (
-	bus_id	INTEGER,
-	maker	TEXT,
-	series	TEXT,
-	seat_number	INTEGER,
-	driver_number	INTEGER,
-	PRIMARY KEY(bus_id)
-);
+DELETE FROM "bus";
+DELETE FROM "Driver";
+COMMIT;

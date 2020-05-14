@@ -3,87 +3,47 @@ package ba.unsa.etf.rs.tutorijal8;
 import java.time.LocalDate;
 
 public class Driver {
-    private Integer id;
-    private String Ime;
-    private String Prezime;
-    private String JMBG;
-    private LocalDate BirthDate;
-    private LocalDate EmploymentDate;
-
-    public Driver() { }
-
-    public Driver(String ime, String prezime, String JMBG, LocalDate birthDate, LocalDate employmentDate) {
-        this.Ime = ime;
-        Prezime = prezime;
-        this.JMBG = JMBG;
-        BirthDate = birthDate;
-        EmploymentDate = employmentDate;
+    String name,surname,jmb;
+    LocalDate Birthday,EmployeadDate;
+    public Driver(String name, String surname, String jmb, LocalDate birthday, LocalDate employedDate) {
+        this.name = name;
+        this.surname = surname;
+        this.jmb = jmb;
+        Birthday = birthday;
+        EmployeadDate = employedDate;
     }
-
-    public Driver(int id , String ime, String prezime, String JMBG, LocalDate birthDate, LocalDate employmentDate) {
-        this.id = id;
-        this.Ime = ime;
-        Prezime = prezime;
-        this.JMBG = JMBG;
-        BirthDate = birthDate;
-        EmploymentDate = employmentDate;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
-        return Ime;
+        return name;
     }
-
-    public void setIme(String ime) {
-        Ime = ime;
+    public void setName(String name) {
+        this.name = name;
     }
-
-    public String getPrezime() {
-        return Prezime;
+    public String getSurname() {
+        return surname;
     }
-
-    public void setPrezime(String prezime) {
-        Prezime = prezime;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
-
-    public String getJMBG() {
-        return JMBG;
+    public String getJmb() {
+        return jmb;
     }
-
-    public void setJMBG(String JMBG) {
-        this.JMBG = JMBG;
+    public void setJmb(String jmb) {
+        this.jmb = jmb;
     }
-
     public LocalDate getBirthday() {
-        return BirthDate;
+        return Birthday;
     }
-
-    public void setBirthDate(LocalDate birthDate) {
-        BirthDate = birthDate;
+    public void setBirthday(LocalDate birthday) {
+        Birthday = birthday;
     }
-
-    public LocalDate getEmploymentDate() {
-        return EmploymentDate;
+    public LocalDate getEmployeadDate() {
+        return EmployeadDate;
     }
-
-    public void setEmploymentDate(LocalDate employmentDate) {
-        EmploymentDate = employmentDate;
+    public void setEmployeadDate(LocalDate employeadDate) {
+        EmployeadDate = employeadDate;
     }
-
     @Override
-    public String toString() {
-        return  " - (" + this.getName() + " " + this.getPrezime() + " ( " + this.getJMBG() + " ))";
-    }
-
-    public boolean equals(Driver d) {
-        return (d.getJMBG().equals(this.getJMBG()));
+    public String toString(){
+        return name+' '+ surname+" ( "+ jmb+ " )";
     }
 }
-

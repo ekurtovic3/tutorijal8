@@ -1,104 +1,59 @@
 package ba.unsa.etf.rs.tutorijal8;
 
 public class Bus {
-    private Integer id = null;
-    private String maker;
-    private String series;
-    private int numberOfSeats;
-    private int numberOfDrivers;
-    private Driver FirstDriver = null;
-    private Driver SecondDriver = null;
+    String Maker, Series;
+    int SeatNumber;
+    Driver DriverOne, DriverTwo;
 
-    public void setFirstDriver(Driver firstDriver) {
-        FirstDriver = firstDriver;
+    public Bus(String maker, String series, int seatNumber) {
+        Maker = maker;
+        Series = series;
+        SeatNumber = seatNumber;
     }
 
-    public void setSecondDriver(Driver secondDriver) {
-        SecondDriver = secondDriver;
-    }
-
-    public Bus(){ }
-
-    public Bus(String maker, String series, int numberOfSeats) {
-        this.maker = maker;
-        this.series = series;
-        this.numberOfSeats = numberOfSeats;
-    }
-
-    public Bus(int Id, String maker, String series, int numberOfSeats) {
-        id = Id;
-        this.maker = maker;
-        this.series = series;
-        this.numberOfSeats = numberOfSeats;
-
-    }
-    public Bus(int Id, String maker, String series, int numberOfSeats, Driver firstDriver, Driver secondDriver) {
-        id = Id;
-        this.maker = maker;
-        this.series = series;
-        this.numberOfSeats = numberOfSeats;
-        FirstDriver = firstDriver;
-        SecondDriver = secondDriver;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public Bus(String maker, String series, int seatNumber, Driver driverOne, Driver driverTwo) {
+        Maker = maker;
+        Series = series;
+        SeatNumber = seatNumber;
+        DriverOne = driverOne;
+        DriverTwo = driverTwo;
     }
 
     public String getMaker() {
-        return maker;
+        return Maker;
     }
-
     public void setMaker(String maker) {
-        this.maker = maker;
+        Maker = maker;
     }
-
     public String getSeries() {
-        return series;
+        return Series;
     }
-
     public void setSeries(String series) {
-        this.series = series;
+        Series = series;
     }
-
     public int getSeatNumber() {
-        return numberOfSeats;
+        return SeatNumber;
     }
-
-    public void setNumberOfSeats(int numberOfSeats) {
-        this.numberOfSeats = numberOfSeats;
+    public void setSeatNumber(int seatNumber) {
+        SeatNumber = seatNumber;
     }
-
-    public int getNumberOfDrivers() {
-        return numberOfDrivers;
-    }
-
-    public void setNumberOfDrivers(int numberOfDrivers) {
-        this.numberOfDrivers = numberOfDrivers;
-    }
-
     public Driver getDriverOne() {
-        return FirstDriver;
+        return DriverOne;
     }
-
+    public void setDriverOne(Driver driverOne) {
+        DriverOne = driverOne;
+    }
     public Driver getDriverTwo() {
-        return SecondDriver;
+        return DriverTwo;
     }
-
+    public void setDriverTwo(Driver driverTwo) {
+        DriverTwo = driverTwo;
+    }
     @Override
-    public String toString () {
-        String s = "";
-        s += this.maker + " " + this.series + " ( seats: " + this.getSeatNumber() + " )";
-        if (FirstDriver != null) {
-            s += FirstDriver.toString();
-        }
-        if (SecondDriver != null) {
-            s += SecondDriver.toString();
-        }
+    public String toString(){
+        String s= Maker+" "+ Series+" ( seats: "+ SeatNumber+ " )";
+        if(DriverOne!= null) s+=" - (" + DriverOne.toString() + ")";
+        if(DriverOne!= null) s+=" - (" + DriverOne.toString() + ")";
         return s;
     }
 }
