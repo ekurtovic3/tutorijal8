@@ -4,7 +4,7 @@
     <list default="true" id="421d7fb7-fab3-48c2-b140-ac993b300cb0" name="Default Changelist" comment="TUT8-FXML za Bus">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/fxml/transport.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/transport.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal8/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal8/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal8/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal8/Bus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal8/TransportDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rs/tutorijal8/TransportDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/ba/unsa/etf/rs/tutorijal8/PripremaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ba/unsa/etf/rs/tutorijal8/PripremaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/ba/unsa/etf/rs/tutorijal8/Zadatak1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ba/unsa/etf/rs/tutorijal8/Zadatak1Test.java" afterDir="false" />
@@ -199,7 +199,7 @@
       <workItem from="1588973205932" duration="13187000" />
       <workItem from="1589062485967" duration="5891000" />
       <workItem from="1589460863903" duration="1110000" />
-      <workItem from="1589662858387" duration="4954000" />
+      <workItem from="1589662858387" duration="6610000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1557517574894</created>
@@ -285,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589665680622</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="TUT8-Lisner za Driver">
+      <created>1589667929439</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1589667929439</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +311,8 @@
     <MESSAGE value="Baza" />
     <MESSAGE value="TUT8-FXML za Driver" />
     <MESSAGE value="TUT8-FXML za Bus" />
-    <option name="LAST_COMMIT_MESSAGE" value="TUT8-FXML za Bus" />
+    <MESSAGE value="TUT8-Lisner za Driver" />
+    <option name="LAST_COMMIT_MESSAGE" value="TUT8-Lisner za Driver" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Project_Structure" timestamp="1589662925073">
@@ -323,18 +331,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1536.824@0.0.1536.824" timestamp="1588985979345" />
-    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser" timestamp="1589667227967">
+    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser" timestamp="1589669171221">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1589667227967" />
+    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1589669171221" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589664271043">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589664271043" />
-    <state x="390" y="7" width="1021" height="810" key="CommitChangelistDialog2" timestamp="1589665686289">
+    <state x="390" y="7" width="1021" height="810" key="CommitChangelistDialog2" timestamp="1589669639775">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="390" y="7" width="1021" height="810" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589665686289" />
+    <state x="390" y="7" width="1021" height="810" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589669639775" />
     <state x="147" y="65" key="DiffContextDialog" timestamp="1589068446225">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -347,22 +355,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="473" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589665926236" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1589667840424">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1589669575265">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589667840424" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1589667840424">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589669575265" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1589669575264">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589667840424" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1589667840423">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589669575264" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1589669575264">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589667840423" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1589667840424">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589669575264" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1589669575265">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589667840424" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589669575265" />
     <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1588973772096">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -371,10 +379,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589663602608" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1589665689167">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1589669642905">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589665689167" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589669642905" />
     <state x="498" y="306" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588893170663">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
