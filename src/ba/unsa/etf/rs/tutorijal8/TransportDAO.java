@@ -17,6 +17,7 @@ public class TransportDAO {
     private ArrayList<Driver> Drivers = new ArrayList<>();
     private ArrayList<Bus> Busses = new ArrayList<>();
 
+
     public static TransportDAO getInstance() {
         if (instance == null) instance = new TransportDAO();
         return instance;
@@ -226,5 +227,9 @@ public class TransportDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    public void UpdateDriver(Driver driver){
+
+
     }
 }
