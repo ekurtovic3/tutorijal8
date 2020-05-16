@@ -1,49 +1,76 @@
 package ba.unsa.etf.rs.tutorijal8;
 
+import javafx.beans.property.SimpleStringProperty;
+
 import java.time.LocalDate;
 
 public class Driver {
-    String name,surname,jmb;
-    LocalDate Birthday,EmployeadDate;
+    SimpleStringProperty name,surname,jmb;
+    SimpleStringProperty Birthday,EmployeadDate;
+
+
+
     public Driver(String name, String surname, String jmb, LocalDate birthday, LocalDate employedDate) {
-        this.name = name;
-        this.surname = surname;
-        this.jmb = jmb;
-        Birthday = birthday;
-        EmployeadDate = employedDate;
+        this.name =new SimpleStringProperty(name);
+        this.surname = new SimpleStringProperty(surname);
+        this.jmb = new SimpleStringProperty(jmb);
+        this.Birthday = new SimpleStringProperty(birthday.toString());
+        this.EmployeadDate= new SimpleStringProperty(employedDate.toString());
     }
     public String getName() {
-        return name;
+        return name.get();
     }
     public void setName(String name) {
-        this.name = name;
+        this.name.set(name);
     }
     public String getSurname() {
-        return surname;
+        return surname.get();
     }
     public void setSurname(String surname) {
-        this.surname = surname;
+        this.surname.set(surname);
     }
     public String getJmb() {
-        return jmb;
+        return jmb.get();
     }
     public void setJmb(String jmb) {
-        this.jmb = jmb;
+        this.jmb.set(jmb);
     }
     public LocalDate getBirthday() {
-        return Birthday;
+        return this.getBirthday();
     }
     public void setBirthday(LocalDate birthday) {
-        Birthday = birthday;
+        Birthday.set(String.valueOf(Birthday));
     }
     public LocalDate getEmployeadDate() {
+        return this.getEmployeadDate();
+    }
+
+    public SimpleStringProperty birthdayProperty() {
+        return Birthday;
+    }
+
+    public SimpleStringProperty employeadDateProperty() {
         return EmployeadDate;
     }
+
     public void setEmployeadDate(LocalDate employeadDate) {
-        EmployeadDate = employeadDate;
+        EmployeadDate.set(String.valueOf(EmployeadDate));
     }
+
+    public SimpleStringProperty nameProperty() {
+        return name;
+    }
+
+    public SimpleStringProperty surnameProperty() {
+        return surname;
+    }
+
+    public SimpleStringProperty jmbProperty() {
+        return jmb;
+    }
+
     @Override
     public String toString(){
-        return name+' '+ surname+" ( "+ jmb+ " )";
+        return this.getName()+' '+ this.getSurname()+" ( "+ this.getJmb()+ " )";
     }
 }

@@ -1,5 +1,8 @@
 package ba.unsa.etf.rs.tutorijal8;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.sql.*;
@@ -36,6 +39,7 @@ public class TransportDAO {
                         throwables.printStackTrace(); } } }
             ulaz.close(); } catch (FileNotFoundException e) {
             e.printStackTrace(); } }
+
     public ArrayList<Driver> getDrivers() {
         Drivers =new ArrayList<>();
         Statement statement= null;
@@ -51,6 +55,22 @@ public class TransportDAO {
         } catch (SQLException e) {
             e.printStackTrace(); }
         return Drivers; }
+
+    public ObservableList<Driver> getDriversMVC() {
+        ObservableList<Driver> vozaci = FXCollections.observableArrayList();
+        Statement statement= null;
+        try {
+            statement = conn.createStatement();
+            ResultSet rezultat = statement.executeQuery("SELECT *FROM Driver");
+            while(rezultat.next()){
+                vozaci.add(new Driver(rezultat.getString(1),rezultat.getString(2),
+                        rezultat.getString(3),
+                        LocalDate.parse(rezultat.getDate(4).toString()),
+                        LocalDate.parse(rezultat.getDate(5).toString())));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); }
+        return vozaci; }
     public void addDriver(Driver driver) {
         getDrivers();
         boolean i= false ;
@@ -77,6 +97,8 @@ public class TransportDAO {
             addDriver.setString(6, null );
             addDriver.executeUpdate(); }catch (SQLException e){
             e.printStackTrace(); } }
+
+
     public ArrayList<Bus> getBusses() {
         Busses = new ArrayList<>();
         try { Statement statement = conn.createStatement();

@@ -43,8 +43,8 @@
                             <children>
                                 <Label text="Birthday date:" />
                                 <Label text="Employment date:" GridPane.rowIndex="1" />
-                                <DatePicker fx:id="BirthdayDateDriver" prefHeight="26.0" prefWidth="132.0" GridPane.columnIndex="1" />
-                                <DatePicker fx:id="EmploymentDateDriver" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <TextField fx:id="BirthdayDateDriver" prefHeight="26.0" prefWidth="132.0" GridPane.columnIndex="1" />
+                                <TextField fx:id="EmploymentDateDriver" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                             </children>
                         </GridPane>
                         <GridPane layoutX="300.0" layoutY="200.0" prefHeight="139.0" prefWidth="237.0" vgap="5.0">
@@ -69,7 +69,7 @@
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets></Button>
-                                <Button mnemonicParsing="false" text="Exit" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Button mnemonicParsing="false" text="Exit" onAction="#exit" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                             </children>
                         </GridPane>
                     </children></AnchorPane>
