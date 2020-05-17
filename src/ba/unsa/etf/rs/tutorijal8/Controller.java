@@ -26,13 +26,15 @@ public class Controller {
     private TransportDAO dao;
 
 
+    public Controller(TransportDAO t) {
+        dao = t;
+    }
 
     @FXML
     public void initialize() {
         dao=TransportDAO.getInstance();
         listDriver.setItems(dao.getDriversMVC());
         listBus.setItems(dao.getBussesMVC());
-
         listDriver.getSelectionModel().selectedItemProperty().addListener((obs, oldKorisnik, newKorisnik) -> {
             Driver oldDriver= (Driver) oldKorisnik;
             Driver newDriver= (Driver) newKorisnik;

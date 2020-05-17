@@ -12,18 +12,28 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
+
+
+
 public class Main extends Application {
+
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/transport.fxml"));
+        TransportDAO model = TransportDAO.getInstance();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/transport.fxml"));
+        loader.setController(new Controller(model));
+        Parent root = loader.load();
         primaryStage.setTitle("Transport");
         primaryStage.setScene(new Scene(root, Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE));
         primaryStage.show();
     }
+
     public static void main(String[] args) {
         launch(args);
     }
 }
+
 
 /*
 public class Main {
