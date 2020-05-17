@@ -29,7 +29,7 @@
                                 <TextField fx:id="nameDriver" prefHeight="25.0" prefWidth="137.0" GridPane.columnIndex="1" />
                                 <TextField fx:id="surnameDriver" prefHeight="25.0" prefWidth="135.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                 <TextField fx:id="JMBGDriver" prefHeight="25.0" prefWidth="136.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" text="Potvrdi izmjene" onAction="#btnUpdateDriver" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Button mnemonicParsing="false" onAction="#btnUpdateDriver" text="Potvrdi izmjene" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                             </children>
                         </GridPane>
                         <GridPane layoutX="274.0" layoutY="170.0" prefHeight="118.0" prefWidth="264.0" vgap="5.0">
@@ -66,15 +66,15 @@
                     <children>
                         <Label layoutX="22.0" layoutY="44.0" text="Maker:" />
                         <Label layoutX="22.0" layoutY="79.0" text="Series:" />
-                        <ListView fx:id="listBus" layoutX="283.0" layoutY="23.0" prefHeight="200.0" prefWidth="300.0" />
 
+                        <ListView fx:id="listBus" layoutX="283.0" layoutY="23.0" prefHeight="200.0" prefWidth="300.0" />
                         <TextField fx:id="MakerBus" layoutX="107.0" layoutY="40.0" />
                         <TextField fx:id="SeriesBus" layoutX="107.0" layoutY="75.0" />
 
                         <Button layoutX="22.0" layoutY="186.0" mnemonicParsing="false" onAction="#addBus" text="Add bus" />
                         <Button layoutX="93.0" layoutY="186.0" mnemonicParsing="false" onAction="#deleteBus" text="Delete bus" />
                         <Button fx:id="exitBus" layoutX="182.0" layoutY="186.0" mnemonicParsing="false" onAction="#exit" text="Exit" />
-                  <Button layoutX="20.0" layoutY="123.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" text="Potvrdi izmjene" onAction="#btnUpdateBus"/>
+                  <Button layoutX="22.0" layoutY="138.0" mnemonicParsing="false" onAction="#btnUpdateBus" prefHeight="26.0" prefWidth="114.0" text="Potvrdi izmjene" />
                     </children></AnchorPane>
             </content>
         </Tab>
