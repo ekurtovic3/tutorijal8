@@ -23,6 +23,7 @@ public class Controller {
     public TextField JMBGDriver;
     public TextField MakerBus;
     public TextField SeriesBus;
+    //public TextField SeatNumberBus;
     private TransportDAO dao;
 
 
