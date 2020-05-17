@@ -11,21 +11,18 @@ import javafx.scene.control.TextField;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Controller {
 
-    public ListView listDriver;
-    public ListView listBus;
+    public ListView<Driver> listDriver;
+    public ListView<Bus> listBus;
     public TextField nameDriver;
     public TextField surnameDriver;
     public TextField JMBGDriver;
-    public DatePicker BirthdayDateDriver;
-    public DatePicker EmploymentDateDriver;
     public TextField MakerBus;
     public TextField SeriesBus;
-    public TextField SeatNumberBus;
-
     private TransportDAO dao;
 
 
@@ -43,11 +40,7 @@ public class Controller {
                 nameDriver.textProperty().unbindBidirectional(oldDriver.nameProperty());
                 surnameDriver.textProperty().unbindBidirectional(oldDriver.surnameProperty());
                 JMBGDriver.textProperty().unbindBidirectional(oldDriver.jmbProperty());
-                try {
-                    dao.UpdateDriver(oldDriver);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+
 
             }
             if (newKorisnik == null) {
@@ -67,11 +60,7 @@ public class Controller {
             if (oldKorisnik != null) {
                 MakerBus.textProperty().unbindBidirectional(oldBus.makerProperty());
                 SeriesBus.textProperty().unbindBidirectional(oldBus.seriesProperty());
-                try {
-                    dao.UpdateBus(oldBus);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+
 
             }
             if (newKorisnik == null) {
@@ -104,9 +93,11 @@ public class Controller {
         dao.deleteDriver(driver);
 
     }
-    public void addBus(ActionEvent actionEvent) {
+    public void addBus(ActionEvent actionEvent) throws SQLException {
+
         listBus.getItems().add(new Bus(" "," ",0));
         dao.addBus  (new Bus(" "," ",0));
+
     }
 
     public void deleteBus(ActionEvent actionEvent) {
@@ -114,5 +105,16 @@ public class Controller {
         listBus.getItems().remove(bus);
         dao.deleteBus(bus);
 
+    }
+
+
+    public void btnUpdateBus(ActionEvent actionEvent) throws SQLException {
+        for(Bus k: listBus.getItems())
+            dao.UpdateBus(k);
+    }
+
+    public void btnUpdateDriver(ActionEvent actionEvent) throws SQLException {
+        for(Driver k: listDriver.getItems())
+            dao.UpdateDriver(k);
     }
 }

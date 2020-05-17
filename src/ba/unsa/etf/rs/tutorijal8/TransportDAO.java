@@ -115,6 +115,11 @@ public class TransportDAO {
         Busses.add(bus);
         try {
             PreparedStatement addDriver = conn.prepareStatement(" insert into bus values (?,?,?,?,?,?)");
+         //   ResultSet id;
+           // PreparedStatement ID = conn.prepareStatement(" SELECT max(BusID)+1 From bus");
+            //                id=ID.executeQuery();
+
+          //  addDriver.setInt(1,id.next() );
             addDriver.setString(2, bus.getMaker());
             addDriver.setString(3, bus.getSeries());
             addDriver.setInt(4, bus.getSeatNumber());
