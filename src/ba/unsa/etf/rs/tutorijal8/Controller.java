@@ -43,30 +43,22 @@ public class Controller {
                 nameDriver.textProperty().unbindBidirectional(oldDriver.nameProperty());
                 surnameDriver.textProperty().unbindBidirectional(oldDriver.surnameProperty());
                 JMBGDriver.textProperty().unbindBidirectional(oldDriver.jmbProperty());
-
-                //BirthdayDateDriver.getValue().unbindBidirectional(oldDriver.getBirthday());
-             //   EmploymentDateDriver.textProperty().unbindBidirectional(oldDriver.employeadDateProperty());
+                try {
+                    dao.UpdateDriver(oldDriver);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
 
             }
             if (newKorisnik == null) {
                 nameDriver.setText("");
                 surnameDriver.setText("");
                 JMBGDriver.setText("");
-               // BirthdayDateDriver.setText("");
-               // EmploymentDateDriver.setText("");
             }
             else {
                 nameDriver.textProperty().bindBidirectional(newDriver.nameProperty());
                 surnameDriver.textProperty().bindBidirectional(newDriver.surnameProperty());
                 JMBGDriver.textProperty().bindBidirectional(newDriver.jmbProperty());
-                  Driver a=new Driver(nameDriver.toString(),surnameDriver.toString(),JMBGDriver.toString(), LocalDate.EPOCH,LocalDate.EPOCH);
-                try {
-                    dao.UpdateDriver(a);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                //   BirthdayDateDriver.textProperty().bindBidirectional(newDriver.birthdayProperty());
-                //EmploymentDateDriver.textProperty().bindBidirectional(newDriver.employeadDateProperty());
             }
         });
         listBus.getSelectionModel().selectedItemProperty().addListener((obs, oldKorisnik, newKorisnik) -> {
@@ -75,28 +67,20 @@ public class Controller {
             if (oldKorisnik != null) {
                 MakerBus.textProperty().unbindBidirectional(oldBus.makerProperty());
                 SeriesBus.textProperty().unbindBidirectional(oldBus.seriesProperty());
-                SeatNumberBus.textProperty().unbindBidirectional(newBus.seatNumberProperty());
-
+                try {
+                    dao.UpdateBus(oldBus);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
 
             }
             if (newKorisnik == null) {
                 MakerBus.setText("");
                 SeriesBus.setText("");
-                SeatNumberBus.setText("");
             }
             else {
                 MakerBus.textProperty().bindBidirectional(newBus.makerProperty());
                 SeriesBus.textProperty().bindBidirectional(newBus.seriesProperty());
-                Bus a=new Bus(MakerBus.toString(),SeriesBus.toString(),0);
-                try {
-                    dao.UpdateBus(a);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                //SeatNumberBus.textProperty().<SimpleIntegerProperty>bindBidirectional(newBus.seatNumberProperty());
-
-
-
             }
         });
 

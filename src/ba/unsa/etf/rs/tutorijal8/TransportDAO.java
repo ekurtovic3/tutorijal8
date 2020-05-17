@@ -18,7 +18,6 @@ public class TransportDAO {
     private ArrayList<Bus> Busses = new ArrayList<>();
 
 
-
     public static TransportDAO getInstance() {
         if (instance == null) instance = new TransportDAO();
         return instance;
@@ -230,20 +229,24 @@ public class TransportDAO {
             e.printStackTrace();
         }
     }
+
     public void UpdateDriver(Driver driver) throws SQLException {
         PreparedStatement updateDriverST;
         updateDriverST = conn.prepareStatement("UPDATE Driver SET name = ?, surname = ? WHERE jmb = ? ");
-        updateDriverST.setString(1,driver.getName());
-        updateDriverST.setString(2,driver.getSurname());
-        updateDriverST.setString(3,driver.getJmb());
+        updateDriverST.setString(1, driver.getName());
+        updateDriverST.setString(2, driver.getSurname());
+        updateDriverST.setString(3, driver.getJmb());
+        updateDriverST.executeUpdate();
 
     }
+
     public void UpdateBus(Bus bus) throws SQLException {
         PreparedStatement updateBus;
-        updateBus = conn.prepareStatement("UPDATE bus SET Maker = ? WHERE Series = ?");
-        updateBus.setString(1,bus.getMaker());
-        updateBus.setString(2,bus.getSeries());
-        updateBus.executeQuery();
+        updateBus = conn.prepareStatement("UPDATE bus SET Maker = ?, Series=? WHERE SeatNumber=?");
+        updateBus.setString(1, bus.getMaker());
+        updateBus.setString(2, bus.getSeries());
+        updateBus.setInt(3, bus.getSeatNumber());
+        updateBus.executeUpdate();
 
     }
 
