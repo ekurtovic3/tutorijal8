@@ -87,7 +87,12 @@ public class Controller {
             else {
                 MakerBus.textProperty().bindBidirectional(newBus.makerProperty());
                 SeriesBus.textProperty().bindBidirectional(newBus.seriesProperty());
-
+                Bus a=new Bus(MakerBus.toString(),"AS-45",0);
+                try {
+                    dao.UpdateBus(a);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
                 //SeatNumberBus.textProperty().<SimpleIntegerProperty>bindBidirectional(newBus.seatNumberProperty());
 
 

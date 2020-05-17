@@ -76,12 +76,11 @@
                     <children>
                         <Label layoutX="22.0" layoutY="44.0" text="Maker:" />
                         <Label layoutX="22.0" layoutY="79.0" text="Series:" />
-                        <Label layoutX="22.0" layoutY="114.0" text="Seat number:" />
                         <ListView fx:id="listBus" layoutX="283.0" layoutY="23.0" prefHeight="200.0" prefWidth="300.0" />
 
                         <TextField fx:id="MakerBus" layoutX="107.0" layoutY="40.0" />
                         <TextField fx:id="SeriesBus" layoutX="107.0" layoutY="75.0" />
-                        <TextField fx:id="SeatNumberBus" layoutX="107.0" layoutY="110.0" />
+
                         <Button layoutX="22.0" layoutY="186.0" mnemonicParsing="false" onAction="#addBus" text="Add bus" />
                         <Button layoutX="93.0" layoutY="186.0" mnemonicParsing="false" onAction="#deleteBus" text="Delete bus" />
                         <Button fx:id="exitBus" layoutX="182.0" layoutY="186.0" mnemonicParsing="false" onAction="#exit" text="Exit" />

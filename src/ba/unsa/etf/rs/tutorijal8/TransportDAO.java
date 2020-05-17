@@ -232,21 +232,19 @@ public class TransportDAO {
     }
     public void UpdateDriver(Driver driver) throws SQLException {
         PreparedStatement updateDriverST;
-        updateDriverST = conn.prepareStatement("UPDATE drivers SET name = ?, surname = ? WHERE jmb = ? ");
+        updateDriverST = conn.prepareStatement("UPDATE Driver SET name = ?, surname = ? WHERE jmb = ? ");
         updateDriverST.setString(1,driver.getName());
         updateDriverST.setString(2,driver.getSurname());
         updateDriverST.setString(3,driver.getJmb());
-        updateDriverST.executeUpdate();
 
     }
     public void UpdateBus(Bus bus) throws SQLException {
-        PreparedStatement updateDriverST;
-       /* updateDriverST = conn.prepareStatement("UPDATE bus SET name = ?, surname = ? WHERE jmb = ?; COMMIT; ");
-        updateDriverST.setString(1,driver.getName());
-        updateDriverST.setString(2,driver.getSurname());
-        updateDriverST.setString(3,driver.getJmb());
-        updateDriverST.executeQuery();
-*/
+        PreparedStatement updateBus;
+        updateBus = conn.prepareStatement("UPDATE bus SET Maker = ? WHERE Series = ?");
+        updateBus.setString(1,bus.getMaker());
+        updateBus.setString(2,bus.getSeries());
+        updateBus.executeQuery();
+
     }
 
 }
