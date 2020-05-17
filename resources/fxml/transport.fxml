@@ -4,13 +4,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rs.tutorijal8.Controller">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rs.tutorijal8.Controller">
     <tabs>
         <Tab text="Driver">
             <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="329.0" prefWidth="542.0">
                     <children>
-                        <ListView fx:id="listDriver" layoutX="14.0" layoutY="14.0" prefHeight="149.0" prefWidth="571.0"/>
+                        <ListView fx:id="listDriver" layoutX="14.0" layoutY="14.0" prefHeight="150.0" prefWidth="468.0" />
                         <GridPane layoutX="14.0" layoutY="172.0" prefHeight="92.0" prefWidth="253.0">
                             <columnConstraints>
                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="123.0" />
@@ -40,14 +40,9 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
-                            <children>
-                                <Label text="Birthday date:" />
-                                <Label text="Employment date:" GridPane.rowIndex="1" />
-                                <TextField fx:id="BirthdayDateDriver" prefHeight="26.0" prefWidth="132.0" GridPane.columnIndex="1" />
-                                <TextField fx:id="EmploymentDateDriver" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                            </children>
+                           
                         </GridPane>
-                        <GridPane layoutX="300.0" layoutY="200.0" prefHeight="139.0" prefWidth="237.0" vgap="5.0">
+                        <GridPane layoutX="274.0" layoutY="170.0" prefHeight="118.0" prefWidth="264.0" vgap="5.0">
                             <columnConstraints>
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -58,18 +53,18 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Button contentDisplay="CENTER" graphicTextGap="10.0" mnemonicParsing="false"  onAction="#addDriver" text="Add driver" GridPane.columnIndex="1">
+                                <Button contentDisplay="CENTER" graphicTextGap="10.0" mnemonicParsing="false" onAction="#addDriver" text="Add driver" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding></Button>
-                                <Button mnemonicParsing="false" text="Delete driver" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <Button mnemonicParsing="false" onAction="#deleteDriver" text="Delete driver" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets></Button>
-                                <Button mnemonicParsing="false" text="Exit" onAction="#exit" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Button mnemonicParsing="false" onAction="#exit" text="Exit" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                             </children>
                         </GridPane>
                     </children></AnchorPane>
@@ -77,19 +72,19 @@
         </Tab>
         <Tab text="Bus">
             <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane>
                     <children>
                         <Label layoutX="22.0" layoutY="44.0" text="Maker:" />
                         <Label layoutX="22.0" layoutY="79.0" text="Series:" />
                         <Label layoutX="22.0" layoutY="114.0" text="Seat number:" />
-                        <ListView fx:id="listBus" layoutX="283.0" layoutY="23.0" prefHeight="200.0" prefWidth="300.0"/>
+                        <ListView fx:id="listBus" layoutX="283.0" layoutY="23.0" prefHeight="200.0" prefWidth="300.0" />
 
                         <TextField fx:id="MakerBus" layoutX="107.0" layoutY="40.0" />
                         <TextField fx:id="SeriesBus" layoutX="107.0" layoutY="75.0" />
                         <TextField fx:id="SeatNumberBus" layoutX="107.0" layoutY="110.0" />
-                        <Button layoutX="22.0" layoutY="186.0" mnemonicParsing="false" text="Add bus" onAction="#addBus" />
-                        <Button layoutX="93.0" layoutY="186.0" mnemonicParsing="false" text="Delete bus" onAction="#deleteBus" />
-                        <Button fx:id="exitBus" onAction="#exit" layoutX="182.0" layoutY="186.0" mnemonicParsing="false" text="Exit" />
+                        <Button layoutX="22.0" layoutY="186.0" mnemonicParsing="false" onAction="#addBus" text="Add bus" />
+                        <Button layoutX="93.0" layoutY="186.0" mnemonicParsing="false" onAction="#deleteBus" text="Delete bus" />
+                        <Button fx:id="exitBus" layoutX="182.0" layoutY="186.0" mnemonicParsing="false" onAction="#exit" text="Exit" />
                     </children></AnchorPane>
             </content>
         </Tab>

@@ -18,6 +18,7 @@ public class TransportDAO {
     private ArrayList<Bus> Busses = new ArrayList<>();
 
 
+
     public static TransportDAO getInstance() {
         if (instance == null) instance = new TransportDAO();
         return instance;
@@ -108,6 +109,7 @@ public class TransportDAO {
                 e.printStackTrace();
             }
         } else throw new IllegalArgumentException("Taj vozač već postoji!");
+
     }
 
     public void addBus(Bus bus) {
@@ -228,8 +230,23 @@ public class TransportDAO {
             e.printStackTrace();
         }
     }
-    public void UpdateDriver(Driver driver){
-
+    public void UpdateDriver(Driver driver) throws SQLException {
+        PreparedStatement updateDriverST;
+        updateDriverST = conn.prepareStatement("UPDATE drivers SET name = ?, surname = ? WHERE jmb = ? ");
+        updateDriverST.setString(1,driver.getName());
+        updateDriverST.setString(2,driver.getSurname());
+        updateDriverST.setString(3,driver.getJmb());
+        updateDriverST.executeUpdate();
 
     }
+    public void UpdateBus(Bus bus) throws SQLException {
+        PreparedStatement updateDriverST;
+       /* updateDriverST = conn.prepareStatement("UPDATE bus SET name = ?, surname = ? WHERE jmb = ?; COMMIT; ");
+        updateDriverST.setString(1,driver.getName());
+        updateDriverST.setString(2,driver.getSurname());
+        updateDriverST.setString(3,driver.getJmb());
+        updateDriverST.executeQuery();
+*/
+    }
+
 }

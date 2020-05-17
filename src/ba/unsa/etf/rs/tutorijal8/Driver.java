@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 public class Driver {
     SimpleStringProperty name,surname,jmb;
-    SimpleStringProperty Birthday,EmployeadDate;
+    LocalDate Birthday,EmployeadDate;
 
 
 
@@ -14,8 +14,8 @@ public class Driver {
         this.name =new SimpleStringProperty(name);
         this.surname = new SimpleStringProperty(surname);
         this.jmb = new SimpleStringProperty(jmb);
-        this.Birthday = new SimpleStringProperty(birthday.toString());
-        this.EmployeadDate= new SimpleStringProperty(employedDate.toString());
+        this.Birthday = birthday;
+        this.EmployeadDate=  employedDate;
     }
     public String getName() {
         return name.get();
@@ -36,25 +36,19 @@ public class Driver {
         this.jmb.set(jmb);
     }
     public LocalDate getBirthday() {
-        return this.getBirthday();
-    }
-    public void setBirthday(LocalDate birthday) {
-        Birthday.set(String.valueOf(Birthday));
-    }
-    public LocalDate getEmployeadDate() {
-        return this.getEmployeadDate();
-    }
-
-    public SimpleStringProperty birthdayProperty() {
         return Birthday;
     }
-
-    public SimpleStringProperty employeadDateProperty() {
+    public void setBirthday(LocalDate birthday) {
+        Birthday=birthday;
+    }
+    public LocalDate getEmployeadDate() {
         return EmployeadDate;
     }
 
+
+
     public void setEmployeadDate(LocalDate employeadDate) {
-        EmployeadDate.set(String.valueOf(EmployeadDate));
+        EmployeadDate=employeadDate;
     }
 
     public SimpleStringProperty nameProperty() {
