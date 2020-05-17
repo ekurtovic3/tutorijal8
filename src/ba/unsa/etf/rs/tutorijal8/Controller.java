@@ -8,6 +8,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Controller {
@@ -93,4 +94,21 @@ public class Controller {
     }
 
 
+    public void addDriver(ActionEvent actionEvent) {
+        listDriver.getItems().add(new Driver(" ",""," ", LocalDate.EPOCH,LocalDate.EPOCH));
+        dao.addDriver(new Driver(" ",""," ", LocalDate.EPOCH,LocalDate.EPOCH));
+    }
+
+
+    public void addBus(ActionEvent actionEvent) {
+        listBus.getItems().add(new Bus(" "," ",0));
+        dao.addBus  (new Bus(" "," ",0));
+    }
+
+    public void deleteBus(ActionEvent actionEvent) {
+        Bus bus = (Bus) listBus.getSelectionModel().getSelectedItem();
+        listBus.getItems().remove(bus);
+        dao.deleteBus(bus);
+
+    }
 }
